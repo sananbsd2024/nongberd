@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  .responsive {
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    button {
+      font-size: 1rem;
+      padding: 5px 10px;
+    }
+    .slider-container {
+      width: 100%; /* ใช้ความกว้างเต็มหน้าจอ */
+      height: auto; /* ปรับความสูงอัตโนมัติ */
+    }
+  
+    img {
+      width: 100%; /* ให้รูปภาพใช้ความกว้างเต็ม */
+      height: auto;
+    }
+  }
+  
