@@ -72,31 +72,4 @@ export async function PUT(request: Request) {
   }
 }
 
-export async function DELETE(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
-  try {
-    await connectToDatabase();
-    const { id } = params;
 
-    const deletedGallery = await GalleryModel.findByIdAndDelete(id);
-    if (!deletedGallery) {
-      return NextResponse.json(
-        { success: false, error: "Gallery not found" },
-        { status: 404 }
-      );
-    }
-
-    return NextResponse.json({
-      success: true,
-      message: "Gallery deleted successfully",
-    });
-  } catch (error) {
-    console.error("Error deleting gallery:", error);
-    return NextResponse.json(
-      { success: false, error: "Internal Server Error" },
-      { status: 500 }
-    );
-  }
-}
